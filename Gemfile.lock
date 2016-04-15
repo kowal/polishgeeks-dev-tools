@@ -4,7 +4,7 @@ PATH
     polishgeeks-dev-tools (1.1.2)
       brakeman
       faker
-      haml-lint
+      haml_lint
       mongoid-rspec
       pry
       rspec
