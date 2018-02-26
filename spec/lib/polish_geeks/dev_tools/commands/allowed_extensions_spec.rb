@@ -20,12 +20,14 @@ RSpec.describe PolishGeeks::DevTools::Commands::AllowedExtensions do
 
     context 'when we have invalid files' do
       let(:file_name) { 'file.py' }
+
       it { expect(allowed_extensions.output).to eq [file_name] }
     end
   end
 
   describe '#label' do
     let(:expected) { 'Allowed Extensions' }
+
     it { expect(allowed_extensions.label).to eq expected }
   end
 
@@ -37,6 +39,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::AllowedExtensions do
     end
 
     before { allowed_extensions.instance_variable_set('@output', output) }
+
     it { expect(allowed_extensions.error_message).to eq expected }
   end
 
@@ -45,11 +48,13 @@ RSpec.describe PolishGeeks::DevTools::Commands::AllowedExtensions do
 
     context 'when output is empty' do
       let(:output) { '' }
+
       it { expect(allowed_extensions.valid?).to eq true }
     end
 
     context 'when output is empty' do
       let(:output) { rand.to_s }
+
       it { expect(allowed_extensions.valid?).to eq false }
     end
   end

@@ -13,6 +13,7 @@ RSpec.describe PolishGeeks::DevTools::Validators::Rubocop do
             instance_double(PolishGeeks::DevTools::Config, rubocop: false)
           )
         end
+
         it { expect(rubocop.valid?).to be false }
       end
     end
@@ -24,6 +25,7 @@ RSpec.describe PolishGeeks::DevTools::Validators::Rubocop do
             instance_double(PolishGeeks::DevTools::Config, rubocop: true)
           )
         end
+
         it { expect(rubocop.valid?).to be true }
       end
     end

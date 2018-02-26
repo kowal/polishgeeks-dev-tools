@@ -8,6 +8,7 @@ RSpec.describe PolishGeeks::DevTools::Config do
   described_class::COMMANDS.each do |attribute|
     describe "#{attribute}=" do
       let(:value) { rand }
+
       before { config.public_send(:"#{attribute}=", value) }
 
       it 'assigns a given value' do
@@ -17,6 +18,7 @@ RSpec.describe PolishGeeks::DevTools::Config do
 
     describe "#{attribute}?" do
       let(:value) { rand(2) == 0 }
+
       before { config.public_send(:"#{attribute}=", value) }
 
       it 'assigns a given value' do
@@ -27,6 +29,7 @@ RSpec.describe PolishGeeks::DevTools::Config do
 
   describe '.setup' do
     subject(:config) { described_class }
+
     let(:instance) { described_class.new }
     let(:block) { -> {} }
 

@@ -12,7 +12,9 @@ RSpec.describe PolishGeeks::DevTools::Validators::Base do
 
   describe '#valid?' do
     it do
-      expect { base.valid? }.to raise_error(PolishGeeks::DevTools::Errors::NotImplementedError)
+      expect { base.valid? }.to raise_error(
+        PolishGeeks::DevTools::Errors::NotImplementedError
+      )
     end
   end
 

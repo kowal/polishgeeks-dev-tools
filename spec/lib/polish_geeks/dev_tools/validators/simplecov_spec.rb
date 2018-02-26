@@ -25,6 +25,7 @@ RSpec.describe PolishGeeks::DevTools::Validators::Simplecov do
           allow(Object).to receive(:const_defined?) { false }
           expect(simplecov).to receive(:output)
         end
+
         it { expect(simplecov.valid?).to be false }
       end
     end

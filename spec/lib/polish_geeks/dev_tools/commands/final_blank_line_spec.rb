@@ -55,11 +55,13 @@ RSpec.describe PolishGeeks::DevTools::Commands::FinalBlankLine do
 
     context 'when output is empty' do
       let(:output) { [] }
+
       it { expect(final_blank_line.valid?).to eq true }
     end
 
     context 'when output have some files' do
       let(:output) { ['file_name'] }
+
       it { expect(final_blank_line.valid?).to eq false }
     end
   end

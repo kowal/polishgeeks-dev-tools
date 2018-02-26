@@ -32,6 +32,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::ExpiresIn do
       before do
         expires_in.instance_variable_set('@output', '')
       end
+
       it { expect(expires_in.valid?).to eq true }
     end
   end

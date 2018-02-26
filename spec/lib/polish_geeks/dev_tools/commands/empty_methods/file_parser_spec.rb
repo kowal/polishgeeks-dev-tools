@@ -2,6 +2,7 @@
 
 RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
   subject(:file_parser) { described_class.new(file) }
+
   let(:file) { Tempfile.new('foo') }
 
   describe '#find_empty_methods' do
@@ -55,7 +56,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'singleton_methods and methods are defined' do
       before do
-        file.write("
+        file.write('
           define_singleton_method(:a) { puts rand(5) }
           define_singleton_method(:ab) { |_a, _b| rand(5) }
           define_singleton_method :c do |_a, _b|
@@ -67,7 +68,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
             # comment
             # comment
             rand(5)
-          end")
+          end')
         file.read
       end
 
@@ -94,8 +95,8 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'empty body method' do
       before do
-        file.write(" def a
-                     end ")
+        file.write(' def a
+                     end ')
         file.read
       end
 
@@ -104,8 +105,8 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'empty body method with comment' do
       before do
-        file.write(" def a # comment
-                     end #comment")
+        file.write(' def a # comment
+                     end #comment')
         file.read
       end
 
@@ -114,10 +115,10 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'empty method' do
       before do
-        file.write(" def a
+        file.write(' def a
                       #
                       #
-                     end ")
+                     end ')
         file.read
       end
 
@@ -126,12 +127,12 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'method with comments inside' do
       before do
-        file.write(" def a
+        file.write(' def a
                       # comment
                       # comment
                       # comment
                       rand(10)
-                     end ")
+                     end ')
         file.read
       end
 
@@ -140,9 +141,9 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'method which defines empty define_method inside' do
       before do
-        file.write(" def a
+        file.write(' def a
                       define_method(:asd) {}
-                     end ")
+                     end ')
         file.read
       end
 
@@ -151,11 +152,11 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'method which defines empty define_singleton_method inside' do
       before do
-        file.write(" def a
+        file.write(' def a
                       define_singleton_method(:asd) do
                         # comment
                       end
-                     end ")
+                     end ')
         file.read
       end
 
@@ -164,9 +165,9 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
 
     context 'method which defines define_method inside' do
       before do
-        file.write(" def a
+        file.write(' def a
                       define_method(:asd) { rand(150) } #
-                     end ")
+                     end ')
         file.read
       end
 

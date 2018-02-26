@@ -5,6 +5,7 @@ require 'tempfile'
 
 RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods do
   subject(:empty_methods) { described_class.new }
+
   describe '#execute' do
     let(:file) { [rand.to_s] }
     let(:empty_methods_output) { [] }
@@ -27,6 +28,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods do
 
     context 'when exist not valid file' do
       let(:empty_methods_output) { [rand.to_s, rand.to_s] }
+
       before do
         expect(empty_methods)
           .to receive(:sanitize)
