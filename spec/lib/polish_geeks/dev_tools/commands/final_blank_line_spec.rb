@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require 'spec_helper'
+equire 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::Commands::FinalBlankLine do
   subject(:final_blank_line) { described_class.new }

@@ -15,3 +15,7 @@ Style/FrozenStringLiteralComment:
 
 Lint/DuplicateMethods:
   Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+

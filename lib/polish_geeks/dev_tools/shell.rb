@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module PolishGeeks
   module DevTools
     # Class wrapping shell commands executing

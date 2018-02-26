@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'bundler'
 require 'rake'
 require 'polishgeeks-dev-tools'
@@ -7,6 +5,7 @@ require 'polishgeeks-dev-tools'
 desc 'Self check using command maintained in this gem'
 task :check do
   PolishGeeks::DevTools.setup do |config|
+    config.simplecov_threshold = 50
     config.brakeman = false
     config.haml_lint = false
     config.expires_in_files_ignored = %w[

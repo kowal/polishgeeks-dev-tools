@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
   subject(:file_parser) { described_class.new(file) }
 

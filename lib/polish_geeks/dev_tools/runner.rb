@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module PolishGeeks
   module DevTools
     # Class used to execute appropriate commands based on config settings

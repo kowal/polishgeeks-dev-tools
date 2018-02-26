@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module PolishGeeks
   module DevTools
     # Module encapsulating all the validators that we use to check/verify code

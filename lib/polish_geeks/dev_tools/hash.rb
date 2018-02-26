@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module PolishGeeks
   module DevTools
     # Hash extensions required only by rake tasks in this rake file

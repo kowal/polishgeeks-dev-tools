@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Module encapsulating PolishGeeks specific code
 module PolishGeeks
   # Dev Tools for PolishGeeks developers
