@@ -4,6 +4,7 @@ require 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::Validators::Base do
   subject(:base) { described_class.new(output) }
+
   let(:output) { :output }
 
   describe '#new' do

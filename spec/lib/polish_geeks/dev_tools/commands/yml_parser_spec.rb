@@ -13,6 +13,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::YmlParser do
   describe '#execute' do
     let(:results) { [file] }
     let(:json) { { key: 'test', value: 'test' } }
+
     before do
       expect(Dir)
         .to receive(:[])

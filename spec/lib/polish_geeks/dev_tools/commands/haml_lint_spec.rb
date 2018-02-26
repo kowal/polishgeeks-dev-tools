@@ -26,6 +26,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::HamlLint do
 
     context 'when app config does not exist' do
       let(:path) { Dir.pwd }
+
       before do
         expect(PolishGeeks::DevTools).to receive(:gem_root) { path }
         expect(File).to receive(:exist?) { false }

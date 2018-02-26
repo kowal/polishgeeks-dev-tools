@@ -4,6 +4,7 @@ require 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::Validators::Simplecov do
   subject(:simplecov) { described_class.new(output) }
+
   let(:output) do
     OpenStruct.new(
       rspec: '370 / 669 LOC (95.00%) covered'

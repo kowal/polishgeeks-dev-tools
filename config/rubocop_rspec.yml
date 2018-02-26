@@ -14,3 +14,7 @@ RSpec/MessageSpies:
   Enabled: false
 RSpec/ContextWording:
   Enabled: false
+RSpec/PredicateMatcher:
+  Enabled: false
+RSpec/NestedGroups:
+  Enabled: false

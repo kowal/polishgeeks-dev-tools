@@ -20,7 +20,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::BundlerAudit do
   describe '#valid?' do
     context 'when there are vulnerabilities' do
       before do
-        output = <<-EOS
+        output = <<-OUTPUT
           Name: activesupport
           Version: 3.2.10
           Advisory: OSVDB-91451
@@ -30,7 +30,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::BundlerAudit do
           Solution: upgrade to ~> 3.1.12, >= 3.2.13
 
           Unpatched versions found!
-        EOS
+        OUTPUT
         bundler_audit.instance_variable_set('@output', output)
       end
 

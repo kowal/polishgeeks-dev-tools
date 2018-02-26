@@ -33,6 +33,8 @@ Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 Metrics/BlockLength:
   Enabled: false
+Naming/FileName:
+  Enabled: false
 
 inherit_from:
   - rubocop_rspec.yml

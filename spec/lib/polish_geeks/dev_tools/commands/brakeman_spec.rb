@@ -77,7 +77,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::Brakeman do
     end
 
     describe 'counter' do
-      described_class::REGEXPS.each do |name, _regexp|
+      described_class::REGEXPS.each_key do |name, _regexp|
         describe "##{name}" do
           let(:amount) { rand(1000) }
 

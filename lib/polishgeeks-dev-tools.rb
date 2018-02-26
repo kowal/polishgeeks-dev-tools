@@ -26,4 +26,4 @@
 end
 
 require 'polish_geeks/dev_tools'
-load 'polish_geeks/dev_tools/tasks/dev-tools.rake'
+load 'polish_geeks/dev_tools/tasks/dev_tools.rake'

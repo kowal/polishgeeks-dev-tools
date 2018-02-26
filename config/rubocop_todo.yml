@@ -12,3 +12,6 @@
 # SupportedStyles: when_needed, always
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Lint/DuplicateMethods:
+  Enabled: false
