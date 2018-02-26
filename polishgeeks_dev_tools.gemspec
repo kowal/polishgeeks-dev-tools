@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rspec'
   s.add_dependency 'rubocop'
   s.add_dependency 'rubocop-rspec'
-  s.add_dependency 'rubycritic'
+  s.add_dependency 'rubycritic', '3.3.0'
   s.add_dependency 'simplecov'
   s.add_dependency 'timecop'
   s.add_dependency 'yard'
