@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     # Basic logger used to print output from commands

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   # Allows us to get config, gem_root, app_root and setup
   module DevTools

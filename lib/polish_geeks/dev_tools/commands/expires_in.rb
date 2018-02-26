@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     module Commands
@@ -6,14 +8,14 @@ module PolishGeeks
         self.type = :validator
 
         # List of dirs that we will check for
-        CHECKED_DIRS = %w(
+        CHECKED_DIRS = %w[
           app
           lib
-        ).freeze
+        ].freeze
 
         # Regexp that we want to use to catch invalid things that occur
         # instead of expires_in
-        CHECKED_REGEXP = 'expire_in\|expir_in'.freeze
+        CHECKED_REGEXP = 'expire_in\|expir_in'
 
         # Executes this command
         def execute

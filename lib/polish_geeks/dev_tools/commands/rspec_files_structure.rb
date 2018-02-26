@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     module Commands
@@ -10,15 +12,15 @@ module PolishGeeks
 
         # Files in directories that we want to check against their rspec
         # corresponding files
-        FILES_CHECKED = %w(
+        FILES_CHECKED = %w[
           app/**/*.rb
           lib/**/*.rb
-        ).freeze
+        ].freeze
 
         # From where should we take spec files
-        RSPEC_FILES = %w(
+        RSPEC_FILES = %w[
           spec/**/*_spec.rb
-        ).freeze
+        ].freeze
 
         # Executes this command
         # @return [Array<String>] empty array if all the files have corresponding

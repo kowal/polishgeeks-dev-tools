@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
   subject(:file_parser) { described_class.new(file) }
   let(:file) { Tempfile.new('foo') }
@@ -7,13 +9,11 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
       before do
         file.write("
           define_singleton_method(:a) {}
-
           define_singleton_method('b') { |_a, _b| }
           define_singleton_method :c do |_a, _b|
             #
             #
           end
-
           define_singleton_method :d do |_a, _b|
           end
           ")
@@ -27,7 +27,6 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
       before do
         file.write("
           define_method(:a) {} # comment
-
           define_method('b') { |_a, _b| } # comment
           define_method :c do |_a, _b| # comment
             #
@@ -43,7 +42,6 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
       before do
         file.write("
           define_method(:a) {}
-
           define_method('b') { |_a, _b| }
           define_method :c do |_a, _b|
             #
@@ -59,13 +57,11 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
       before do
         file.write("
           define_singleton_method(:a) { puts rand(5) }
-
           define_singleton_method(:ab) { |_a, _b| rand(5) }
           define_singleton_method :c do |_a, _b|
             rand(5)
           end
           define_method(:d) { puts rand(5) }
-
           define_method(:e) { |_a, _b| rand(5) }
           define_method :f do |_a, _b|
             # comment
@@ -120,7 +116,6 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::FileParser do
       before do
         file.write(" def a
                       #
-
                       #
                      end ")
         file.read

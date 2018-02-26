@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods::StringRefinements do
   using described_class
 

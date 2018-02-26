@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     # Config manager which is able to check if config file exist either in local

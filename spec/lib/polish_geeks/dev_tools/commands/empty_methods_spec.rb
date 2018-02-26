@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'tempfile'
 
@@ -97,8 +99,8 @@ RSpec.describe PolishGeeks::DevTools::Commands::EmptyMethods do
   end
 
   describe '#remove_excludes' do
-    let(:files) { %w(lib/file.txt exclude.txt file.rb) }
-    let(:excludes) { %w(lib exclude.txt) }
+    let(:files) { %w[lib/file.txt exclude.txt file.rb] }
+    let(:excludes) { %w[lib exclude.txt] }
 
     before do
       expect(empty_methods)

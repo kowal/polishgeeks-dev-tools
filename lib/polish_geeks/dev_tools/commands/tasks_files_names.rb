@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     module Commands
@@ -9,17 +11,17 @@ module PolishGeeks
 
         # Capistrano tasks check rules
         CAP = OpenStruct.new(
-          dirs: %w(
+          dirs: %w[
             lib/capistrano
-          ),
+          ],
           regexp: /.*\.cap$/
         )
 
         # Rake tasks check rules
         RAKE = OpenStruct.new(
-          dirs: %w(
+          dirs: %w[
             lib/tasks
-          ),
+          ],
           regexp: /.*\.rake$/
         )
 

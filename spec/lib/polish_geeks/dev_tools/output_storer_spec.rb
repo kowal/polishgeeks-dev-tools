@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::OutputStorer do
@@ -5,7 +7,7 @@ RSpec.describe PolishGeeks::DevTools::OutputStorer do
 
   describe '#initialize' do
     context 'when we execute the command' do
-      let(:commands) { %i(rubocop yard) }
+      let(:commands) { %i[rubocop yard] }
       let(:result) { { rubocop: '', yard: '' } }
 
       before do

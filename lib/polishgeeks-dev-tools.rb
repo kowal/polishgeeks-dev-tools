@@ -1,24 +1,26 @@
-%w(
+# frozen_string_literal: true
+
+%w[
   yaml
   yard
   fileutils
   timecop
   ostruct
-).each { |lib| require lib }
+].each { |lib| require lib }
 
-%w(
+%w[
   validators/base
   commands/base
   commands/empty_methods
   commands/empty_methods/string_refinements
-).each { |lib| require "polish_geeks/dev_tools/#{lib}" }
+].each { |lib| require "polish_geeks/dev_tools/#{lib}" }
 
-%w(
+%w[
   *.rb
   validators/*.rb
   commands/*.rb
   commands/**/*.rb
-).each do |path|
+].each do |path|
   base_path = File.dirname(__FILE__) + "/polish_geeks/dev_tools/#{path}"
   Dir[base_path].each { |file| require file }
 end

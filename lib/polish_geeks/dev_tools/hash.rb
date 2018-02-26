@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     # Hash extensions required only by rake tasks in this rake file
@@ -9,7 +11,7 @@ module PolishGeeks
       # @return [Boolean] true if both hashes have same keys and same keys structure
       def same_key_structure?(other)
         return false unless keys == other.keys &&
-            keys.all? { |inside| inside.is_a?(Symbol) || inside.is_a?(String) }
+                            keys.all? { |inside| inside.is_a?(Symbol) || inside.is_a?(String) }
 
         keys.all? do |inside|
           if self[inside].is_a?(::Hash)

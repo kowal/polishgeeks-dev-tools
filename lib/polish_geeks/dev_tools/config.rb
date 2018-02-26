@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     # Configurator for enabling specific command runners
@@ -20,20 +22,20 @@ module PolishGeeks
         end
       end
 
-      %i(
+      %i[
         required_files_include
         rspec_files_structure_ignored
         expires_in_files_ignored
         final_blank_line_ignored
         empty_methods_ignored
         simplecov_threshold
-      ).each do |attr|
+      ].each do |attr|
         attr_accessor attr
       end
 
       # Available commands
       # All commands will be executed in this order (first rubocop, then rspec, etc)
-      COMMANDS = %i(
+      COMMANDS = %i[
         required_files
         gemfile
         expires_in
@@ -53,13 +55,13 @@ module PolishGeeks
         simplecov
         yard
         rubycritic
-      ).freeze
+      ].freeze
 
       # Additional options for commands
-      COMMANDS_OPTIONS = %i(
+      COMMANDS_OPTIONS = %i[
         rubocop_rspec
         rspec_disallow_pending
-      ).freeze
+      ].freeze
 
       (COMMANDS + COMMANDS_OPTIONS).each do |attr_name|
         attr_accessor attr_name

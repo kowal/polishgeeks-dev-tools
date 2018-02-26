@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PolishGeeks
   module DevTools
     module Commands
@@ -8,7 +10,7 @@ module PolishGeeks
         attr_reader :counter
 
         # Default paths which we want to exclude from analyse
-        DEFAULT_PATHS_TO_EXCLUDE = %w(
+        DEFAULT_PATHS_TO_EXCLUDE = %w[
           coverage
           tmp
           doc
@@ -21,7 +23,7 @@ module PolishGeeks
           .gem
           .swp
           .swo
-        ).freeze
+        ].freeze
 
         # Executes this command and set output and counter variables
         def execute
