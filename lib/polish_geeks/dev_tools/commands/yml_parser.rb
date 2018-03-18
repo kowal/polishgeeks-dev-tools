@@ -67,7 +67,7 @@ module PolishGeeks
         # @param [String] file name that we want to load
         # @return [Hash] data serialization in YAML format
         def parse_yaml(file)
-          YAML.load(File.open(file))
+          YAML.safe_load(File.open(file))
         end
 
         # recursion method to find key with nil value

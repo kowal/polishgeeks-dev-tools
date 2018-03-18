@@ -2,6 +2,7 @@ require 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::Validators::Simplecov do
   subject(:simplecov) { described_class.new(output) }
+
   let(:output) do
     OpenStruct.new(
       rspec: '370 / 669 LOC (95.00%) covered'
@@ -23,6 +24,7 @@ RSpec.describe PolishGeeks::DevTools::Validators::Simplecov do
           allow(Object).to receive(:const_defined?) { false }
           expect(simplecov).to receive(:output)
         end
+
         it { expect(simplecov.valid?).to be false }
       end
     end

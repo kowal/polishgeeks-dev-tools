@@ -2,7 +2,9 @@ require 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::Commands::Rubocop do
   subject(:rubocop) { described_class.new }
+
   let(:config) { double }
+
   before { allow(PolishGeeks::DevTools::Config).to receive(:config) { config } }
 
   describe '#execute' do
@@ -86,11 +88,13 @@ RSpec.describe PolishGeeks::DevTools::Commands::Rubocop do
 
     context 'when we run rubocop' do
       before { expect(config).to receive(:rubocop_rspec?) { false } }
+
       it { expect(rubocop.label).to eq 'Rubocop (10 files, 5 offenses)' }
     end
 
     context 'when we run rubocop with rspec' do
       before { expect(config).to receive(:rubocop_rspec?) { true } }
+
       it { expect(rubocop.label).to eq 'Rubocop with RSpec (10 files, 5 offenses)' }
     end
   end

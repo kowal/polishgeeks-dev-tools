@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.4
   Exclude:
     - bin/**/*
     - db/**/*
@@ -23,14 +23,18 @@ ClassLength:
   CountComments: false
   Max: 200
 LineLength:
-  Max: 99
+  Max: 100
 MethodLength:
   CountComments: false
   Max: 15
 Metrics/AbcSize:
   Max: 25
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
+Metrics/BlockLength:
+  Enabled: false
+Naming/FileName:
+  Enabled: false
 
 inherit_from:
   - rubocop_rspec.yml

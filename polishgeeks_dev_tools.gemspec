@@ -15,19 +15,20 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
 
+  s.add_dependency 'brakeman'
   s.add_dependency 'bundler-audit'
-  s.add_dependency 'simplecov'
-  s.add_dependency 'rubycritic'
-  s.add_dependency 'yard'
+  s.add_dependency 'flay'
+  s.add_dependency 'haml_lint'
   s.add_dependency 'rspec'
   s.add_dependency 'rubocop'
   s.add_dependency 'rubocop-rspec'
+  s.add_dependency 'rubycritic', '3.3.0'
+  s.add_dependency 'simplecov'
   s.add_dependency 'timecop'
-  s.add_dependency 'brakeman'
-  s.add_dependency 'haml_lint'
+  s.add_dependency 'yard'
 
   s.files         = `git ls-files -z`.split("\x0")
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
-  s.require_paths = %w( lib )
+  s.require_paths = %w[lib]
 end

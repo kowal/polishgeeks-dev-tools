@@ -2,6 +2,7 @@ require 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::Validators::Base do
   subject(:base) { described_class.new(output) }
+
   let(:output) { :output }
 
   describe '#new' do
@@ -10,7 +11,9 @@ RSpec.describe PolishGeeks::DevTools::Validators::Base do
 
   describe '#valid?' do
     it do
-      expect { base.valid? }.to raise_error(PolishGeeks::DevTools::Errors::NotImplementedError)
+      expect { base.valid? }.to raise_error(
+        PolishGeeks::DevTools::Errors::NotImplementedError
+      )
     end
   end
 

@@ -41,9 +41,11 @@ RSpec.describe PolishGeeks::DevTools::Commands::RequiredFiles do
       let(:file_name) { rand.to_s }
       let(:output) { [file_name] }
       let(:expected) { "Following files does not exist or are empty:\n#{file_name}\n" }
+
       before do
         required_files.instance_variable_set('@output', output)
       end
+
       it { expect(required_files.error_message).to eq expected }
     end
   end

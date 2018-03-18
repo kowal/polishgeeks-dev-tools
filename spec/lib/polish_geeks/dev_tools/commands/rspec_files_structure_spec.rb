@@ -139,6 +139,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::RspecFilesStructure do
     context 'when files don\'t have corresponding Rspec files' do
       let(:message) { rand.to_s }
       let(:expected) { message + message }
+
       before do
         expect(rspec_files_structure)
           .to receive(:files_error_message)

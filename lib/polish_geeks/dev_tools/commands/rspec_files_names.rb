@@ -10,10 +10,10 @@ module PolishGeeks
 
         # List of dirs in spec/ dir that we will check for
         # _spec.rb naming
-        CHECKED_DIRS = %w(
+        CHECKED_DIRS = %w[
           aggregators controllers helpers lib libs models decorators
           presenters services workers mailers requests polishgeeks*
-        ).freeze
+        ].freeze
 
         # Regexp used to check names in spec files
         CHECK_REGEXP = /(\_spec\.rb)$/
@@ -32,7 +32,7 @@ module PolishGeeks
             @counter += files.count
 
             files.each do |file|
-              @output << file unless file =~ CHECK_REGEXP
+              @output << file unless file.match?(CHECK_REGEXP)
             end
           end
         end

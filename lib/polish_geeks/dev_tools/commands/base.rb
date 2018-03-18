@@ -14,7 +14,7 @@ module PolishGeeks
         # Available command types. We have validators that check something
         # and that should have a 'valid?' method and that check for errors, etc
         # and generators that are executed to generate some stats, docs, etc
-        TYPES = %i(validator generator).freeze
+        TYPES = %i[validator generator].freeze
 
         class << self
           # ConfigManager instance can be provided, which allows us to find a

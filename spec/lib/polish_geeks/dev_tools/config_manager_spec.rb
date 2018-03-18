@@ -2,24 +2,29 @@ require 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::ConfigManager do
   subject(:config_manager) { described_class.new(name) }
+
   let(:name) { 'rubocop.yml' }
   let(:path) { '/path/to/config' }
 
   describe '#present?' do
     context 'when application config exist' do
       before { allow(config_manager).to receive(:application?) { true } }
+
       it { expect(config_manager.present?).to be true }
     end
 
     context 'when application config does not exist' do
       before { allow(config_manager).to receive(:application?) { false } }
+
       context 'and local config exist' do
         before { allow(config_manager).to receive(:local?) { true } }
+
         it { expect(config_manager.present?).to be true }
       end
 
       context 'and local config does not exist' do
         before { allow(config_manager).to receive(:local?) { false } }
+
         it { expect(config_manager.present?).to be false }
       end
     end
@@ -31,16 +36,19 @@ RSpec.describe PolishGeeks::DevTools::ConfigManager do
         allow(config_manager).to receive(:application?) { true }
         expect(config_manager).to receive(:application_path) { path }
       end
+
       it { expect(config_manager.path).to eq path }
     end
 
     context 'when application config does not exist' do
       let(:path2) { '/path/to/config2' }
+
       before do
         allow(config_manager).to receive(:application?) { false }
         expect(config_manager).to receive(:application_path).never
         expect(config_manager).to receive(:local_path) { path2 }
       end
+
       it { expect(config_manager.path).to be path2 }
     end
   end
@@ -53,17 +61,20 @@ RSpec.describe PolishGeeks::DevTools::ConfigManager do
 
       context 'and file exist' do
         before { expect(config_manager).to receive(:local_path) { path } }
+
         it { expect(config_manager.send(:local?)).to be true }
       end
 
       context 'and file does not exist' do
         before { expect(config_manager).to receive(:local_path) { nil } }
+
         it { expect(config_manager.send(:local?)).to be false }
       end
     end
 
     context 'when config name not present' do
       subject(:config_manager) { described_class.new(nil) }
+
       it { expect(config_manager.send(:local?)).to be false }
     end
   end
@@ -85,17 +96,20 @@ RSpec.describe PolishGeeks::DevTools::ConfigManager do
 
       context 'and file exist' do
         before { expect(config_manager).to receive(:application_path) { path } }
+
         it { expect(config_manager.send(:application?)).to be true }
       end
 
       context 'and file does not exist' do
         before { expect(config_manager).to receive(:application_path) { nil } }
+
         it { expect(config_manager.send(:application?)).to be false }
       end
     end
 
     context 'when config name not present' do
       subject(:config_manager) { described_class.new(nil) }
+
       it { expect(config_manager.send(:application?)).to be false }
     end
   end
@@ -114,6 +128,7 @@ RSpec.describe PolishGeeks::DevTools::ConfigManager do
 
     context 'file exist' do
       before { expect(File).to receive(:exist?).with(config_file) { true } }
+
       it { expect(config_manager.send(:fetch_path, path)).to eq(config_file) }
     end
 

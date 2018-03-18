@@ -1,4 +1,4 @@
-require 'spec_helper'
+equire 'spec_helper'
 
 RSpec.describe PolishGeeks::DevTools::Commands::FinalBlankLine do
   subject(:final_blank_line) { described_class.new }
@@ -53,11 +53,13 @@ RSpec.describe PolishGeeks::DevTools::Commands::FinalBlankLine do
 
     context 'when output is empty' do
       let(:output) { [] }
+
       it { expect(final_blank_line.valid?).to eq true }
     end
 
     context 'when output have some files' do
       let(:output) { ['file_name'] }
+
       it { expect(final_blank_line.valid?).to eq false }
     end
   end
@@ -103,8 +105,8 @@ RSpec.describe PolishGeeks::DevTools::Commands::FinalBlankLine do
   end
 
   describe '#remove_excludes' do
-    let(:files) { %w(lib/file.txt exclude.txt file.rb) }
-    let(:excludes) { %w(lib exclude.txt) }
+    let(:files) { %w[lib/file.txt exclude.txt file.rb] }
+    let(:excludes) { %w[lib exclude.txt] }
 
     before do
       expect(final_blank_line)

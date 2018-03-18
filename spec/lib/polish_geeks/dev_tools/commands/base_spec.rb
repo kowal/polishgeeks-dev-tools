@@ -5,11 +5,13 @@ RSpec.describe PolishGeeks::DevTools::Commands::Base do
 
   describe '#execute' do
     let(:error) { PolishGeeks::DevTools::Errors::NotImplementedError }
+
     it { expect { base.execute }. to raise_error(error) }
   end
 
   describe '#valid?' do
     let(:error) { PolishGeeks::DevTools::Errors::NotImplementedError }
+
     it { expect { base.valid? }. to raise_error(error) }
   end
 
@@ -41,6 +43,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::Base do
 
     context 'when we dont require any validators' do
       before { expect(described_class).to receive(:validators) { [] } }
+
       it { expect { base.ensure_executable! }.not_to raise_error }
     end
   end
@@ -52,6 +55,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::Base do
       let(:path) { rand.to_s }
       let(:file_in_path) { "#{app_root}/#{rand}" }
       let(:dir_in_path) { "#{app_root}/#{rand}" }
+
       before do
         expect(File)
           .to receive(:file?)
@@ -73,17 +77,20 @@ RSpec.describe PolishGeeks::DevTools::Commands::Base do
           .with(dir_in_path)
           .and_return(false)
       end
+
       it { expect(base.send(:files_from_path, path)).to eq [file_in_path] }
     end
 
     context 'path is a file' do
       let(:path) { rand.to_s }
+
       before do
         expect(File)
           .to receive(:file?)
           .with("#{app_root}/#{path}")
           .and_return(true)
       end
+
       it { expect(base.send(:files_from_path, path)).to eq ["#{app_root}/#{path}"] }
     end
   end

@@ -1,27 +1,27 @@
-%w(
+%w[
   yaml
   yard
   fileutils
   timecop
   ostruct
-).each { |lib| require lib }
+].each { |lib| require lib }
 
-%w(
+%w[
   validators/base
   commands/base
   commands/empty_methods
   commands/empty_methods/string_refinements
-).each { |lib| require "polish_geeks/dev_tools/#{lib}" }
+].each { |lib| require "polish_geeks/dev_tools/#{lib}" }
 
-%w(
+%w[
   *.rb
   validators/*.rb
   commands/*.rb
   commands/**/*.rb
-).each do |path|
+].each do |path|
   base_path = File.dirname(__FILE__) + "/polish_geeks/dev_tools/#{path}"
   Dir[base_path].each { |file| require file }
 end
 
 require 'polish_geeks/dev_tools'
-load 'polish_geeks/dev_tools/tasks/dev-tools.rake'
+load 'polish_geeks/dev_tools/tasks/dev_tools.rake'

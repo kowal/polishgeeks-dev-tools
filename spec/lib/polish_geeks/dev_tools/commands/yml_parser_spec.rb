@@ -11,6 +11,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::YmlParser do
   describe '#execute' do
     let(:results) { [file] }
     let(:json) { { key: 'test', value: 'test' } }
+
     before do
       expect(Dir)
         .to receive(:[])
@@ -34,6 +35,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::YmlParser do
   describe '#error_message' do
     let(:output) { [file: file, lines: [line]] }
     let(:expected) { "Following yml files have nil as a value:\n#{file}:\n - Key '#{line}'\n" }
+
     before do
       yml_parser.instance_variable_set('@output', output)
     end
@@ -57,11 +59,13 @@ RSpec.describe PolishGeeks::DevTools::Commands::YmlParser do
 
   describe '#config_path' do
     let(:expected) { '/**/*.yml.example' }
+
     before do
       expect(File)
         .to receive(:expand_path)
         .and_return('')
     end
+
     it { expect(yml_parser.send(:config_path)).to eq expected }
   end
 
@@ -81,6 +85,7 @@ RSpec.describe PolishGeeks::DevTools::Commands::YmlParser do
         .to receive(:load)
         .and_return(file)
     end
+
     it { expect(yml_parser.send(:parse_yaml, file)).to eq file }
   end
 

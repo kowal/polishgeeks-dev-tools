@@ -6,12 +6,12 @@ module PolishGeeks
         self.type = :validator
 
         # List of allowed extensions of files
-        ALLOWED_EXTENSIONS = %w(
+        ALLOWED_EXTENSIONS = %w[
           rb
           yml
           rb.example
           yml.example
-        ).freeze
+        ].freeze
 
         # Executes this command
         # @return [Array] command output array with list of

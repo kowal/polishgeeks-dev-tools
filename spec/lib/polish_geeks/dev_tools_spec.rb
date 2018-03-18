@@ -6,6 +6,7 @@ RSpec.describe PolishGeeks::DevTools do
   describe '.gem_root' do
     context 'when we want to get gem root path' do
       let(:path) { Dir.pwd }
+
       it { expect(dev_tools.gem_root).to eq path }
     end
   end
@@ -13,6 +14,7 @@ RSpec.describe PolishGeeks::DevTools do
   describe '.app_root' do
     context 'when we want to get app root path' do
       before { expect(ENV).to receive(:[]).with('BUNDLE_GEMFILE').and_return('/') }
+
       it { expect(dev_tools.app_root).to eq '/' }
     end
   end

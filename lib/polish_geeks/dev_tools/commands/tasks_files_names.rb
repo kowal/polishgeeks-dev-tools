@@ -9,17 +9,17 @@ module PolishGeeks
 
         # Capistrano tasks check rules
         CAP = OpenStruct.new(
-          dirs: %w(
+          dirs: %w[
             lib/capistrano
-          ),
+          ],
           regexp: /.*\.cap$/
         )
 
         # Rake tasks check rules
         RAKE = OpenStruct.new(
-          dirs: %w(
+          dirs: %w[
             lib/tasks
-          ),
+          ],
           regexp: /.*\.rake$/
         )
 
