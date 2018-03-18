@@ -80,7 +80,7 @@ module PolishGeeks
         self.simplecov_threshold = 100
       end
 
-      # Configurating method
+      # Configuration method
       def self.setup(&block)
         self.config = new
 

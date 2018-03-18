@@ -15,7 +15,9 @@ task :check do
       empty_methods_spec.rb
       file_parser_spec.rb
     ]
-    config.rspec_files_structure_ignored = %w[lib/polishgeeks-dev-tools.rb]
+    config.rspec_files_structure_ignored = %w[
+      lib/polishgeeks-dev-tools.rb
+    ]
   end
 
   PolishGeeks::DevTools::Runner.new.execute(
